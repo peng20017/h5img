@@ -1,0 +1,127 @@
+/* ---------------------------------------- 默认css针对16:9标准比例屏幕微信----------------------------------------*/
+.hide{display: none;}
+.loadingpage{background-image: url(../images/loadingpage.png);position: absolute;width: 100%;height: 100%;overflow: hidden;}
+.loadingpage .loading-pic{background-image: url(../images/loadingpic.png);width: 3.06rem;height: 3.77rem;margin: 1.48rem auto 0;}
+.loadingpage .loading-box{width: 6.12rem;margin: .76rem auto 0;}
+.loadingpage .loading-box .wine-bottle{background-image: url(../images/winebottle.png);width: 2.03rem;height: 1.92rem;animation: wine-bottle-move 2s linear forwards;}
+.loadingpage .loading-box .progress-bar{width: 6.12rem;height: .15rem;border-radius: .1rem;background-color: #fff;}
+.loadingpage .loading-box .progress-mask{height: 100%;border-radius: .1rem;background-color: #eecc90;animation: progressmove 2s linear;}
+.loadingpage .loading-box .loading-txt{background-image: url(../images/loadingtxt.png);width: 1.01rem;height: .19rem;margin:.2rem auto 0;}
+@keyframes progressmove{
+    0%{width: 0%;}
+    100%{width:100%;}
+}
+@keyframes wine-bottle-move{
+    0%{transform: translate(0);}
+    100%{transform: translate(5rem);}
+}
+.choosealbum{background-image: url(../images/loadingpage.png);position: absolute;width: 100%;height: 100%;overflow: hidden;}
+.choosealbum .aligncenter{width: 100%;height: 9.8rem;position: absolute;top:50%;margin-top: -4.9rem;}
+.loading-pic1{background-image: url(../images/loadingpic1.png);width: 1.35rem;height: 1.66rem;margin: 0 auto 0;}
+.choosealbum .albumtips{background-image: url(../images/albumtips.png);width: 3.21rem;height: .34rem;margin:.25rem auto 0;}
+.choosealbum .swiper-container {width: 100%;padding-top: 15px;padding-bottom: 15px;}
+.choosealbum .swiper-slide {background-position: center;background-size: cover; width: 3.63rem;height: 5.83rem;}
+.choosealbum .swiper-container .swiper-slide-active{box-shadow:0 0 .32rem .13rem rgba(209,187,118,.86);}
+.choosealbum .btnCamera{display: block;background-image: url(../images/btn-submit.png);width: 3.05rem;height: .86rem;margin:.25rem auto 0;}
+
+.myphoto{background-image: url(../images/loadingpage.png);position: absolute;width: 100%;height: 100%;overflow: hidden;}
+.myphoto .photobox{width: 100%;height: 9.8rem;position: absolute;top: 50%;margin-top: -4.9rem;}
+.myphoto .photobox .shell{background-image: url(../images/shellbg.png);width: 5.72rem;height: 7.85rem;margin:.55rem auto 0;}
+.myphoto .photobox .picdecorate{display: block;width: 7.5rem;height: 9.8rem;position: absolute;left:0;top:0;pointer-events:none;}
+
+.myphoto .btnbox{width: 100%;height: .85rem;position: absolute;left:0;bottom:.2rem;text-align: center;}
+/*.myphoto .btnbox .btn-prev{display:inline-block;background-image: url(../images/btn-prev.png);width: 2.5rem;height: .85rem;background-color: rgba(104,10,11,.7);border-radius:.2rem;margin-right: .5rem;}
+.myphoto .btnbox .btn-next{display:inline-block;background-image: url(../images/btn-next.png);width: 2.5rem;height: .85rem;background-color: rgba(104,10,11,.7);border-radius:.2rem;}*/
+.myphoto .btnbox .btn-choose{display:inline-block;background-image: url(../images/photo/btn-choose.png);width: 2.74rem;height: 1.16rem;margin-right: .57rem;}
+.myphoto .btnbox .btn-comp{display:inline-block;background-image: url(../images/photo/btn-comp.png);width: 2.74rem;height: 1.16rem;}
+
+
+
+.congratulate{position: absolute;width: 100%;height: 100%;background-color: rgba(0, 0, 0,.8);z-index: 5;}
+.congratulate .congratulatetitle{position: absolute;top:50%;margin-top:-4.9rem ;width: 100%;height: 9.8rem;}
+.congratulate .congratulatetitle .choosetitle{background-image: url(../images/choosetitle.png);width: 4.05rem;height: .49rem;margin:.78rem auto 1.18rem;}
+.congratulate .congratulatetitle p{margin:0 auto;}
+.congratulate .congratulatetitle p img{width: 100%;height: 100%;}
+.congratulate .congratulatetitle .title1{width: 4.18rem;height: .91rem;margin-bottom: .48rem;}
+.congratulate .congratulatetitle .title2{width: 4.18rem;height: 1.4rem;margin-bottom: .29rem;}
+.congratulate .congratulatetitle .title3{width: 3.38rem;height: 1.57rem;margin-bottom: 1.46rem;}
+
+.wid1{width: 4.18rem;}
+.wid2{width: 4.18rem;}
+.wid3{width: 3.38rem;}
+
+
+.congratulate .congratulatetitle .btn-skip{display: block;background-image: url(../images/skip.png);width: 3.26rem;height: .82rem;margin:0 auto;}
+.finalphotopage{background-image: url(../images/loadingpage.png);position: absolute;width: 100%;height: 100%;overflow: hidden;}
+.finalphotopage .imgbox{width: 100%;height: 100%;}
+.finalphotopage .imgbox img{width: 100%;}
+
+
+.index{background-image: url(../images/index/bg.jpg);position: absolute;width: 100%;height: 100%;left: 0;top;0;}
+.index .bgline{background-image: url(../images/index/bg-line.png);width: 100%;height: 11.45rem;background-size: 100% auto;position: absolute;left: 0;top:0;}
+.index .lantern{;position: absolute;animation: ani_lantern 2s alternate infinite;transform-origin:center top;}
+.index .lantern1{background-image: url(../images/index/lantern1.png);width: .47rem;height: 3.84rem;left: 4.23rem;top:-1.28rem;}
+.index .lantern2{background-image: url(../images/index/lantern2.png);width: .47rem;height: 2.97rem;left: 4.84rem;top:0;animation-delay:.5s;}
+@keyframes ani_lantern{
+    0%{transform: rotate(-3deg);}
+    100%{transform: rotate(3deg);}
+}
+
+.index .ele1{background-image: url(../images/index/ele1.png);width: 1.84rem;height: 1.9rem;position: absolute;top:2.18rem;right: .17rem;}
+.index .logo{background-image: url(../images/index/logo.png);width: 1.78rem;height: .8rem;position: absolute;left:.26rem;bottom: 2.67rem;}
+.index .txt1{background-image: url(../images/index/txt1.png);width: 3.1rem;height: 1.02rem;position: absolute;left:.26rem;bottom: 1.35rem;}
+.index .peo{background-image: url(../images/index/peo.png);width: 7.5rem;height: 11.7rem;position: absolute;left:0;bottom:-.05rem;}
+.index .firework{background-image: url(../images/index/firework.png);width: 1.22rem;height: 1.22rem;position: absolute;left:2.87rem;bottom:6.42rem;animation: ani_firework 2s  infinite linear;}
+@keyframes ani_firework{
+    0%{transform: scale(0);opacity: 1;}
+    60%{transform: scale(1);opacity:.5;}
+    80%{transform: scale(1);opacity:0;}
+    100%{transform: scale(1);opacity:0;}
+}
+
+.guide{position: absolute;width: 100%;height: 100%;left: 0;top:0;background: rgba(0,0,0,.7);}
+.guide .txt{background-image: url(../images/photo/guide.png);width: 5.81rem;height: 2.58rem;margin: 4.72rem auto 0}
+.guide .btn-close{background-image: url(../images/photo/guide-close.png);width: 3.21rem;height: .83rem;display: block;margin: 1.05rem auto 0;}
+.guide2 .txt{background-image: url(../images/photo/guide2.png);width: 5.81rem;height: 2.58rem;margin: 4.72rem auto 0}
+
+
+.myphoto .imgbox{}
+.myphoto .move{position: absolute;left: 0;top:0;z-index: 2;}
+.myphoto .move.active{z-index: 3;}
+.myphoto .move.active .close{display: block;}
+.myphoto .move.active .rotate{display: block;}
+.myphoto .move.active .resize{display: block;}
+.myphoto .move .close{position: absolute;left: -.3rem;bottom: -.3rem;z-index: 2;background-image: url(../images/photo/remove.png);border-radius: 100%;width: .3rem;height: .3rem;display: none;}
+.myphoto .move .rotate{position: absolute;right: -.3rem;top: -.3rem;z-index: 2;background-image: url(../images/photo/rotate.png);border-radius: 100%;width: .3rem;height: .3rem;display: none;}
+.myphoto .move .resize{position: absolute;right: -.3rem;top: -.3rem;z-index: 2;background-image: url(../images/photo/resize.png);border-radius: 100%;width: .3rem;height: .3rem;display: none;}
+
+
+/*---------------------------------------- 15:9 android 微信 && 16:9 浏览器----------------------*/
+@media screen and (device-width:360px) and (max-height:540px), screen and (device-width:320px) and (max-height:470px), screen and (device-width:375px) and (max-height:560px){
+.myphoto .photobox{margin-top: -5rem;}
+}
+
+/*---------------------------------------- 18:9 android 微信 ----------------------*/
+@media screen and (device-width:360px) and (min-height:600px), screen and (device-width:393px) and (min-height:660px){
+
+}
+
+/*---------------------------------------- iphoneX 微信----------------------*/
+@media screen and (device-width:375px) and (min-height:720px){
+
+}
+
+/*---------------------------------------- iphoneX 浏览器----------------------------------------------*/
+@media screen and (device-width:375px) and (min-height:630px) and (max-height:640px){
+
+}
+
+/*---------------------------------------- android----------------------*/
+@media screen and (device-width:360px), screen and (device-width:393px){
+
+}
+
+/*---------------------------------------- iphone ----------------------------------------------*/
+@media screen and (device-width:320px), screen and (device-width:375px), screen and (device-width:414px){
+
+}

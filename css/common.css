@@ -1,0 +1,162 @@
+/* ---------------------------------------- css base 基础部分---------------------------------------- */
+* {margin:0;padding:0; border:0;touch-action: pan-y; word-break:break-word; font-family:'Microsoft YaHei',arial; background-position: 50% 50%; background-repeat: no-repeat; background-size:100% 100%; background-origin: padding-box; background-clip: padding-box; -webkit-mask-size: 100% 100%; -webkit-mask-repeat: no-repeat; -webkit-tap-highlight-color: rgba(0,0,0,0); font-size: 0.22rem; line-height: 1; box-sizing: border-box; position: relative; }
+html{font-size:50px;}
+html,body{ width:100%; height:100%;}
+table{border-collapse:collapse;border-spacing:0;}
+th,tr,td,h1,h2,h3,h4,h5,h6,i,b,em{font-style:normal;font-weight:normal;}
+ol,ul,li {list-style-type:none; display:block;}
+select,input,img{vertical-align:middle;border:none;outline:none;}
+textarea {resize: none;} /*webkit核心中textare取消拖动调整大小*/
+textarea:focus {outline: none;} /*textarea聚焦时默认边框颜色不变*/
+select,input[type=text],input[type=tel],input[type=password],input[type=number],textarea{ -webkit-appearance:none; border:none; border-radius:0; background-color:transparent; font-family: arial; }
+input::-webkit-input-placeholder,textarea::-webkit-input-placeholder{color:#fff;}/* placeholder文字的颜色*/
+a{ text-decoration:none; display:inline-block;}
+a>img{ width:100%;}
+sup,sub{ font-size: 60%;}
+blockquote, q { quotes: none; }
+.clearFix {display: block;}
+.clearFix:after {clear: both;content: ".";display: block;height: 0;visibility: hidden;}
+.fl,.flt{float:left;display:inline;}
+.fr,.frt{float:right;display:inline;}
+.noPointer{pointer-events:none;}/* 禁止触摸互动事件 */
+.noCallout{-webkit-touch-callout: none;}/*禁用长触弹出的下载图片菜单*/
+.noSelect{-webkit-user-select:none;}/*禁用长触选择文字等功能*/
+.gpuOpen{will-change:transform,opacity;}
+.gpuClose{will-change:auto;}
+.moving{ will-change:transform;}
+.smoothSlide {-webkit-overflow-scrolling: touch;}/* ios设备平滑滚动 */
+.txtShadow{ text-shadow: 0 0 0.01rem #000, 0 0 0.01rem #000; }
+.aniStop{animation-play-state: paused;}
+.aniPlay{ animation-play-state: running;}
+.overScroll{ overflow-y:scroll; -webkit-overflow-scrolling: touch;}
+.layer{ position: absolute; left: 0; top: 0; width: 100%; height: 100%;}
+
+/* ---------------------------------------- css common 公共部分 ---------------------------------------- */
+
+/* 竖屏翻转提示浮层 */
+aside.turnBoxPortrait{ position:fixed; left:0; top:0; width:100%; height:100%; background:#000; z-index:10999; display: none;}
+aside.turnBoxPortrait>div.phone{ width: 0.6rem; height: 1.2rem; margin:1rem auto 0; animation: turnPhone 3.2s linear infinite both; position: relative;}
+aside.turnBoxPortrait>div.phone img{ width: 100%; height: 100%;}
+aside.turnBoxPortrait>div.phone i{ position: absolute; left: 50%; top: 0.48rem; width: 0.3rem; margin-left: -0.15rem; height: 0.225rem;}
+aside.turnBoxPortrait>div.phone i.yes{ background-image: url(../images/common/turn_yes.png); opacity: 0; animation: turnYes 3.2s linear infinite both;}
+aside.turnBoxPortrait>div.phone i.no{ background-image: url(../images/common/turn_no.png); opacity: 0; animation: turnNo 3.2s linear infinite both;}
+aside.turnBoxPortrait>p{ text-align:center; font-size:0.28rem; color:rgba(255,255,255,0.65); margin-top: 0.4rem;}
+
+@-webkit-keyframes turnPhone{
+	0%{ transform: rotate(-90deg); }
+	35%{ transform: rotate(-90deg);}
+	50%{transform: rotate(0deg);}
+	85%{transform: rotate(0deg);}
+	100%{ transform: rotate(-90deg);}
+}
+
+@-webkit-keyframes turnYes{
+	0%{ transform: scale(0); opacity: 0;}
+	50%{ transform: scale(0); opacity: 0;}
+	54%{ transform: scale(1.15); opacity: 1;}
+	58%{ transform: scale(0.85); opacity: 1;}
+	62%{ transform: scale(1); opacity: 1;}
+	80%{ transform: scale(1); opacity: 1;}
+	85%{ transform: scale(0); opacity: 0;}
+	100%{ transform: scale(0); opacity: 0;}
+}
+
+@-webkit-keyframes turnNo{
+	0%{ transform: scale(0); opacity: 0;}
+	4%{ transform: scale(1.15); opacity: 1;}
+	8%{ transform: scale(0.85); opacity: 1;}
+	12%{ transform: scale(1); opacity: 1;}
+	30%{ transform: scale(1); opacity: 1;}
+	35%{ transform: scale(0); opacity: 0;}
+	100%{ transform: scale(0); opacity: 0;}
+}
+
+/* load浮层 */
+aside.loadBox{ position:fixed; left:0; top:0; width:100%; height:100%; background-color:rgba(0,0,0,0.5); z-index:996; display: none;}
+aside.loadBox>span{ position:absolute; left:50%; top:50%; transform: translate(-50%,-50%) scale(0.46);}
+aside.loadBox>span i{ position:absolute; left:0; top:0; width:0.4rem; height:0.1rem; border-radius:0.08rem; background-color:rgba(255,255,255,0.5); box-shadow:0 0 0.1rem rgba(255,255,255,1);}
+aside.loadBox>span i:nth-child(1){ transform:translate(0.6rem, 0) rotate(0deg); animation:loadCircle 2.4s 0s linear infinite;}
+aside.loadBox>span i:nth-child(2){ transform:translate(0.5196rem, 0.3rem) rotate(30deg); animation:loadCircle 2.4s 0.2s linear infinite;}
+aside.loadBox>span i:nth-child(3){ transform:translate(0.3rem, 0.5196rem) rotate(60deg); animation:loadCircle 2.4s 0.4s linear infinite;}
+aside.loadBox>span i:nth-child(4){ transform:translate(0, 0.6rem) rotate(90deg); animation:loadCircle 2.4s 0.6s linear infinite;}
+aside.loadBox>span i:nth-child(5){ transform:translate(-0.3rem, 0.5196rem) rotate(120deg); animation:loadCircle 2.4s 0.8s linear infinite;}
+aside.loadBox>span i:nth-child(6){ transform:translate(-0.5196rem, 0.3rem) rotate(150deg); animation:loadCircle 2.4s 1.0s linear infinite;}
+aside.loadBox>span i:nth-child(7){ transform:translate(-0.6rem, 0) rotate(180deg); animation:loadCircle 2.4s 1.2s linear infinite;}
+aside.loadBox>span i:nth-child(8){ transform:translate(-0.5196rem, -0.3rem) rotate(210deg); animation:loadCircle 2.4s 1.4s linear infinite;}
+aside.loadBox>span i:nth-child(9){ transform:translate(-0.3rem, -0.5196rem) rotate(240deg); animation:loadCircle 2.4s 1.6s linear infinite;}
+aside.loadBox>span i:nth-child(10){ transform:translate(0, -0.6rem) rotate(270deg); animation:loadCircle 2.4s 1.8s linear infinite;}
+aside.loadBox>span i:nth-child(11){ transform:translate(0.3rem, -0.5196rem) rotate(300deg); animation:loadCircle 2.4s 2.0s linear infinite;}
+aside.loadBox>span i:nth-child(12){ transform:translate(0.5196rem, -0.3rem) rotate(330deg); animation:loadCircle 2.4s 2.2s linear infinite;}
+@-webkit-keyframes loadCircle{0%{opacity:1}8.3%{opacity:0}50%{opacity:1}100%{opacity:1}}
+
+/* vloading */
+.vLoading{ position:fixed; left:0; top:0; width:100%; height:100%; background-color:rgba(0,0,0,0.5);  display: none;}
+.vLoading>span{ position:absolute; left:50%; top:50%; margin-left:-0.12rem; margin-top:-0.24rem; transform:scale(0.46);}
+.vLoading>span i{ position:absolute; left:0; top:0; width:0.4rem; height:0.1rem; border-radius:0.08rem; background-color:rgba(255,255,255,0.5); box-shadow:0 0 0.1rem rgba(255,255,255,1);}
+.vLoading>span i:nth-child(1){ transform:translate(0.6rem, 0) rotate(0deg); animation:loadCircle 2.4s 0s linear infinite;}
+.vLoading>span i:nth-child(2){ transform:translate(0.5196rem, 0.3rem) rotate(30deg); animation:loadCircle 2.4s 0.2s linear infinite;}
+.vLoading>span i:nth-child(3){ transform:translate(0.3rem, 0.5196rem) rotate(60deg); animation:loadCircle 2.4s 0.4s linear infinite;}
+.vLoading>span i:nth-child(4){ transform:translate(0, 0.6rem) rotate(90deg); animation:loadCircle 2.4s 0.6s linear infinite;}
+.vLoading>span i:nth-child(5){ transform:translate(-0.3rem, 0.5196rem) rotate(120deg); animation:loadCircle 2.4s 0.8s linear infinite;}
+.vLoading>span i:nth-child(6){ transform:translate(-0.5196rem, 0.3rem) rotate(150deg); animation:loadCircle 2.4s 1.0s linear infinite;}
+.vLoading>span i:nth-child(7){ transform:translate(-0.6rem, 0) rotate(180deg); animation:loadCircle 2.4s 1.2s linear infinite;}
+.vLoading>span i:nth-child(8){ transform:translate(-0.5196rem, -0.3rem) rotate(210deg); animation:loadCircle 2.4s 1.4s linear infinite;}
+.vLoading>span i:nth-child(9){ transform:translate(-0.3rem, -0.5196rem) rotate(240deg); animation:loadCircle 2.4s 1.6s linear infinite;}
+.vLoading>span i:nth-child(10){ transform:translate(0, -0.6rem) rotate(270deg); animation:loadCircle 2.4s 1.8s linear infinite;}
+.vLoading>span i:nth-child(11){ transform:translate(0.3rem, -0.5196rem) rotate(300deg); animation:loadCircle 2.4s 2.0s linear infinite;}
+.vLoading>span i:nth-child(12){ transform:translate(0.5196rem, -0.3rem) rotate(330deg); animation:loadCircle 2.4s 2.2s linear infinite;}
+
+
+
+/* 取代系统alert的弹窗 */
+aside.alertBox{ position:fixed; left:0; top:0; width:100%; height:100%; background:rgba(0,0,0,0.6); z-index:998;}
+aside.alertBox>div{ position: absolute; left: 50%; top: 50%; width:85%; transform: translate(-50%,-50%); background-color:#FAFAFC; border-radius:0.07rem; padding-top: 0.46rem;}
+aside.alertBox>div>p.text{font-size:0.3rem; line-height: 1.4; color:#888; padding: 0 0.46rem 0; margin-bottom: 0.46rem; text-align:center; }
+aside.alertBox>div>p.btn{ text-align: center; border-top: 1px solid #D5D5D6; }
+aside.alertBox>div>p.btn a{ color:#0BB20C; font-size:0.4rem; line-height: 1rem; display: block;}
+aside.alertBox>div>p.btn a:active{ background-color: #eeeeee;}
+
+/* 系统confirm弹窗 */
+aside.confirmBox{ position:fixed; left:0; top:0; width:100%; height:100%; background:rgba(0,0,0,0.6); z-index:998;}
+aside.confirmBox>div{ position: absolute; left: 50%; top: 50%; width:85%; transform: translate(-50%,-50%); background-color:#FAFAFC; border-radius:0.07rem; padding-top: 0.46rem;}
+aside.confirmBox>div>p.text{font-size:0.3rem; line-height: 1.4; color:#888; padding: 0 0.46rem 0; margin-bottom: 0.46rem; text-align:center; }
+aside.confirmBox>div>p.btn{ border-top: 1px solid #D5D5D6; display: flex; align-items: center; justify-content: center; }
+aside.confirmBox>div>p.btn a{ color:#0BB20C; font-size:0.4rem; line-height: 1rem; text-align: center; flex: 1;}
+aside.confirmBox>div>p.btn a:active{ background-color: #eeeeee;}
+aside.confirmBox>div>p.btn a:first-child{ border-right: 1px solid #D5D5D6;}
+
+/* 视频 */
+aside.videoBox{position:fixed; left:0; top:0; width:100%; height:100%; background-color:#000; z-index:996; display:none;}
+aside.videoBox>iframe,aside.videoBox>video{position:absolute; left:0; top: 0; object-fit: fill;}
+aside.videoBox>a.close{ position:absolute; right:0.46rem; top:0.46rem; width:0.7rem; height:0.7rem; background-image: url(../images/common/close_video.png);}
+
+/* 电子罗盘数据面板 */
+#compassPanel{ position:fixed; right:0; top:0; width:40%; background-color:rgba(0,0,0,0.5); z-index: 99; display:none;}
+#compassPanel h3{color:#fff; background-color:rgba(255,255,255,0.2); padding:0.1rem 0.2rem; margin-bottom:0.1rem; font-size: 0.28rem;}
+#compassPanel p{ color:#fff; font-size:0.22rem; margin-bottom:0.1rem; margin-left:0.2rem;}
+
+/* 分享浮层 */
+aside.shareBox{position:fixed; left:0; top:0; width:100%; height:100%; background-color:rgba(0,0,0,0.7); z-index:997; display:none;}
+aside.shareBox>img{ width:100%;}
+
+/* 打开图片按钮 */
+input[name=imageInput]{ position:absolute; left:0; top:0; width:1; height:1; opacity: 0; overflow: hidden; display: none;}
+
+/* 背景音乐按钮 */
+a.bgmBtn{ position: fixed; right: 0.24rem; top: 0.24rem; width: 0.58rem; height: 0.58rem; z-index: 9;}
+a.bgmPlay{ background-image: url(../images/common/bgm_on.png);}
+a.bgmStop{ background-image: url(../images/common/bgm_off.png);}
+
+/* fps */
+#fpsShow{position: fixed; left: 0.1rem; top: 0.1rem; width: 0.9rem; height: 0.36rem; font-size: 0.24rem; background-color: black; display: flex; justify-content: center; align-items: center; pointer-events: none;}
+.fpsFast{ color: greenyellow;}
+.fpsNormal{ color: yellow;}
+.fpsSlow{ color: red;}
+
+/* iphoneX 竖屏底下的安全高度 */
+.iphoneXFullPortrait{ height: calc( 100% - 0.7rem );}
+
+/* 初始化标签*/
+body{ background-color:#000; color: #000;}
+a,a:hover{ color: #000;}
+article{ background-color:white; width:100%; height: 100%; overflow-x: hidden; transform-origin: 0 0;}
